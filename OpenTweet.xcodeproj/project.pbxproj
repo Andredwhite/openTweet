@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		009C4C6C1D9F0CD600F0BC6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */; };
 		009C4C6E1D9F0CD600F0BC6C /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C4C6D1D9F0CD600F0BC6C /* TimelineViewController.swift */; };
-		009C4C711D9F0CD600F0BC6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */; };
 		009C4C731D9F0CD600F0BC6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C721D9F0CD600F0BC6C /* Assets.xcassets */; };
-		009C4C761D9F0CD600F0BC6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */; };
 		009C4C811D9F0CD600F0BC6C /* OpenTweetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C4C801D9F0CD600F0BC6C /* OpenTweetTests.swift */; };
 		009C4C8C1D9F0CD600F0BC6C /* OpenTweetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C4C8B1D9F0CD600F0BC6C /* OpenTweetUITests.swift */; };
 		009C4C9B1D9F0D4100F0BC6C /* timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 009C4C9A1D9F0D4100F0BC6C /* timeline.json */; };
+		659B29F6228F8EE100709C3B /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B29F5228F8EE100709C3B /* Tweet.swift */; };
+		659B29F8228F96E800709C3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659B29F7228F96E800709C3B /* Launch Screen.storyboard */; };
+		659B29FA228F971100709C3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659B29F9228F971100709C3B /* Main.storyboard */; };
+		659C9BDA2290ADA100248F68 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B29F5228F8EE100709C3B /* Tweet.swift */; };
+		659C9BDC2290B3E400248F68 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C9BDB2290B3E400248F68 /* TimeLine.swift */; };
+		659C9BDD2290B3E400248F68 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C9BDB2290B3E400248F68 /* TimeLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +42,7 @@
 		009C4C681D9F0CD600F0BC6C /* OpenTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		009C4C6D1D9F0CD600F0BC6C /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		009C4C701D9F0CD600F0BC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		009C4C721D9F0CD600F0BC6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		009C4C751D9F0CD600F0BC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		009C4C771D9F0CD600F0BC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		009C4C7C1D9F0CD600F0BC6C /* OpenTweetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTweetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		009C4C801D9F0CD600F0BC6C /* OpenTweetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTweetTests.swift; sourceTree = "<group>"; };
@@ -50,6 +52,10 @@
 		009C4C8D1D9F0CD600F0BC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		009C4C9A1D9F0D4100F0BC6C /* timeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.json; sourceTree = "<group>"; };
 		009C4C9D1D9F104800F0BC6C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		659B29F5228F8EE100709C3B /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		659B29F7228F96E800709C3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		659B29F9228F971100709C3B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		659C9BDB2290B3E400248F68 /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +108,13 @@
 		009C4C6A1D9F0CD600F0BC6C /* OpenTweet */ = {
 			isa = PBXGroup;
 			children = (
+				659B29F9228F971100709C3B /* Main.storyboard */,
 				009C4C6B1D9F0CD600F0BC6C /* AppDelegate.swift */,
 				009C4C6D1D9F0CD600F0BC6C /* TimelineViewController.swift */,
-				009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */,
+				659B29F5228F8EE100709C3B /* Tweet.swift */,
+				659C9BDB2290B3E400248F68 /* TimeLine.swift */,
 				009C4C721D9F0CD600F0BC6C /* Assets.xcassets */,
-				009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */,
+				659B29F7228F96E800709C3B /* Launch Screen.storyboard */,
 				009C4C771D9F0CD600F0BC6C /* Info.plist */,
 			);
 			path = OpenTweet;
@@ -206,20 +214,20 @@
 				TargetAttributes = {
 					009C4C671D9F0CD600F0BC6C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = QPU8QS3E62;
+						DevelopmentTeam = XC32KN38AE;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					009C4C7B1D9F0CD600F0BC6C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = QPU8QS3E62;
+						DevelopmentTeam = XC32KN38AE;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 009C4C671D9F0CD600F0BC6C;
 					};
 					009C4C861D9F0CD600F0BC6C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = QPU8QS3E62;
+						DevelopmentTeam = XC32KN38AE;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 009C4C671D9F0CD600F0BC6C;
@@ -251,10 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659B29F8228F96E800709C3B /* Launch Screen.storyboard in Resources */,
 				009C4C9B1D9F0D4100F0BC6C /* timeline.json in Resources */,
-				009C4C761D9F0CD600F0BC6C /* LaunchScreen.storyboard in Resources */,
 				009C4C731D9F0CD600F0BC6C /* Assets.xcassets in Resources */,
-				009C4C711D9F0CD600F0BC6C /* Main.storyboard in Resources */,
+				659B29FA228F971100709C3B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659C9BDC2290B3E400248F68 /* TimeLine.swift in Sources */,
+				659B29F6228F8EE100709C3B /* Tweet.swift in Sources */,
 				009C4C6E1D9F0CD600F0BC6C /* TimelineViewController.swift in Sources */,
 				009C4C6C1D9F0CD600F0BC6C /* AppDelegate.swift in Sources */,
 			);
@@ -289,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				009C4C811D9F0CD600F0BC6C /* OpenTweetTests.swift in Sources */,
+				659C9BDD2290B3E400248F68 /* TimeLine.swift in Sources */,
+				659C9BDA2290ADA100248F68 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,25 +326,6 @@
 			targetProxy = 009C4C881D9F0CD600F0BC6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		009C4C6F1D9F0CD600F0BC6C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				009C4C701D9F0CD600F0BC6C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		009C4C741D9F0CD600F0BC6C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				009C4C751D9F0CD600F0BC6C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		009C4C8E1D9F0CD600F0BC6C /* Debug */ = {
@@ -391,6 +384,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -443,6 +437,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -452,12 +447,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QPU8QS3E62;
+				DEVELOPMENT_TEAM = XC32KN38AE;
 				INFOPLIST_FILE = OpenTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -465,12 +460,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QPU8QS3E62;
+				DEVELOPMENT_TEAM = XC32KN38AE;
 				INFOPLIST_FILE = OpenTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -479,12 +474,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = QPU8QS3E62;
+				DEVELOPMENT_TEAM = XC32KN38AE;
 				INFOPLIST_FILE = OpenTweetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenTweet.app/OpenTweet";
 			};
 			name = Debug;
@@ -494,12 +489,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = QPU8QS3E62;
+				DEVELOPMENT_TEAM = XC32KN38AE;
 				INFOPLIST_FILE = OpenTweetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenTweet.app/OpenTweet";
 			};
 			name = Release;
@@ -508,12 +503,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = QPU8QS3E62;
+				DEVELOPMENT_TEAM = XC32KN38AE;
 				INFOPLIST_FILE = OpenTweetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = OpenTweet;
 			};
 			name = Debug;
@@ -522,12 +517,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = QPU8QS3E62;
+				DEVELOPMENT_TEAM = XC32KN38AE;
 				INFOPLIST_FILE = OpenTweetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opentable.OpenTweetUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = OpenTweet;
 			};
 			name = Release;
