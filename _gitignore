@@ -1,0 +1,49 @@
+# Xcode
+.DS_Store
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+!default.xcworkspace
+xcuserdata
+*.moved-aside
+DerivedData
+.idea/
+
+# developer defined locations
+DevPaths.rb
+
+# Cocoa Pod artifacts
+Pods
+Configuration/xcconfig/ProjectBase.xcconfig
+
+# betabuilder artifacts
+build.output
+git.output
+pkg
+build
+
+#calabash
+.irbrc
+irb_ios5.sh
+.irb-history
+Configuration/xcconfig/ProjectBase.xcconfig
+report-*
+screenshot_*
+Report.html
+Features/iPhone/Unit Test.feature
+Features/step_definitions/unit_test.rb
+*.xccheckout
+Podfile.lock
+OpenTable.xcworkspace/
+Carthage/
+Cartfile.resolved
+*.orig
+recorded_requests/
+culprits.txt
+MetroWhitelist.tsv
