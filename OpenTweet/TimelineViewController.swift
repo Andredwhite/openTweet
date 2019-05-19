@@ -19,6 +19,7 @@ class TimelineViewController: UIViewController {
     func repliesFromSender(sender:Any?)->[Tweet]?{
         guard let cell = sender as? UITableViewCell else {return nil}
         guard let path = self.tableView.indexPath(for: cell) else {return nil}
+        guard source.tweet(at: path) != source.timeLine.parentTweet else {return nil}
         return source.repliesToTweet(at: path)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,7 +36,7 @@ class TimelineViewController: UIViewController {
 
 class TweetCell:UITableViewCell,TweetDisplayable{
     @IBOutlet var authorLabel: UILabel!
-    @IBOutlet var contentTextView: UITextView!
+    @IBOutlet var contentLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var avatarImageView: UIImageView!
 }

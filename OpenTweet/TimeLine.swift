@@ -42,6 +42,15 @@ struct TimeLine:Decodable{
     }
     var tweets:[Tweet]
     /**
+     Returns a tweet if all other tweets in the timeline are in reply to it or nil
+    */
+    var parentTweet:Tweet?{
+        let replyIds = Set(tweets.compactMap({$0.inReplyTo}))
+        guard replyIds.count == 1 else {return nil}
+        guard let first = replyIds.first else {return nil}
+        return tweets.first(where: {$0.id == first})
+    }
+    /**
      Custom Coding Key for readability
      */
     enum CodingKeys:String,CodingKey{

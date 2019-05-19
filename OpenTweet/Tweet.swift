@@ -39,7 +39,7 @@ struct Tweet:Decodable, Equatable{
  */
 protocol TweetDisplayable{
     var authorLabel:UILabel!{get}
-    var contentTextView:UITextView!{get}
+    var contentLabel:UILabel!{get}
     var dateLabel:UILabel!{get}
     var avatarImageView:UIImageView!{get}
 }
@@ -55,7 +55,8 @@ extension TweetDisplayable{
      */
     func display(tweet:Tweet){
         authorLabel?.text = tweet.author
-        contentTextView?.text = tweet.content
+        contentLabel?.text = tweet.content
+        contentLabel?.translatesAutoresizingMaskIntoConstraints = false
         if let date = ISO8601DateFormatter().date(from: tweet.date){
             dateLabel?.text = Self.DisplayDateFormatter.string(from: date)
         }
