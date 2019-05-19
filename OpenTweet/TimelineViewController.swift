@@ -16,21 +16,27 @@ class TimelineViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.dataSource = source as? UITableViewDataSource
     }
-    func repliesFromSender(sender:Any?)->[Tweet]?{
+    /**
+     Returns a tuple with the tweet corresponding to the cell that was selected as well as the replies to that tweet, or nil if either are nil
+     - Parameter sender: UITableViewCell that initated the segue.
+    */
+    func repliesFromSender(sender:Any?)->(Tweet,[Tweet])?{
         guard let cell = sender as? UITableViewCell else {return nil}
         guard let path = self.tableView.indexPath(for: cell) else {return nil}
-        guard source.tweet(at: path) != source.timeLine.parentTweet else {return nil}
-        return source.repliesToTweet(at: path)
+        guard let tweet = source.tweet(at: path) else {return nil}
+        guard let tweets = source.repliesToTweet(at: path) else {return nil}
+        return (tweet, tweets)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dest = segue.destination as? TimelineViewController else {return}
         guard let replies = repliesFromSender(sender: sender) else {return}
-        dest.source = TimelineDataSource.init(tweets: replies)
+        dest.source = TimelineDataSource.init(tweets: replies.1, parent: replies.0)
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard source.timeLine.tweets.count > 1 else {return false}
-        guard repliesFromSender(sender: sender)?.count ?? 0 > 1 else {return false}
-        return true
+        let tuple = repliesFromSender(sender: sender)
+        guard tuple?.1.count ?? 0 > 1 else {return false}
+        return tuple?.0 ?? nil != source.parentTweet
     }
 }
 

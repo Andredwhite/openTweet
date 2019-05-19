@@ -42,15 +42,6 @@ struct TimeLine:Decodable{
     }
     var tweets:[Tweet]
     /**
-     Returns a tweet if all other tweets in the timeline are in reply to it or nil
-    */
-    var parentTweet:Tweet?{
-        let replyIds = Set(tweets.compactMap({$0.inReplyTo}))
-        guard replyIds.count == 1 else {return nil}
-        guard let first = replyIds.first else {return nil}
-        return tweets.first(where: {$0.id == first})
-    }
-    /**
      Custom Coding Key for readability
      */
     enum CodingKeys:String,CodingKey{
@@ -63,6 +54,7 @@ struct TimeLine:Decodable{
  */
 protocol TimeLineDisplayable{
     var timeLine:TimeLine{get}
+    var parentTweet:Tweet? {get}
     var tweetCount:Int {get}
     func tweet(at indexPath:IndexPath)->Tweet?
     func displayTweet(at indexPath:IndexPath, in displayable:TweetDisplayable)
@@ -90,12 +82,17 @@ extension TimeLineDisplayable{
  */
 class TimelineDataSource:NSObject,TimeLineDisplayable{
     var timeLine:TimeLine
+    /**
+     Tweet where all other tweets in the timeline are in reply to or nil
+     */
+    var parentTweet:Tweet? = nil
     init(timeLine:TimeLine){
         self.timeLine = timeLine
         super.init()
     }
-    convenience init(tweets:[Tweet]){
+    convenience init(tweets:[Tweet], parent:Tweet){
         self.init(timeLine: TimeLine.init(tweets: tweets))
+        self.parentTweet = parent
     }
     convenience override init() {
         self.init(timeLine: TimeLine.MasterTimeLine)
