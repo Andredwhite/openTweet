@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1226" y="137"/>
         </scene>
-        <!--Timeline View Controller-->
+        <!--TimeLine-->
         <scene sceneID="cX5-rT-ATO">
             <objects>
                 <viewController id="VHD-gE-wwQ" customClass="TimelineViewController" customModule="OpenTweet" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                                         <connections>
                                             <outlet property="authorLabel" destination="0hK-Vz-7hm" id="K0U-y4-led"/>
                                             <outlet property="avatarImageView" destination="aMf-zg-f5L" id="N6y-8a-0OO"/>
-                                            <outlet property="contentLabel" destination="NJk-T9-l51" id="BMd-ra-HKG"/>
+                                            <outlet property="contentTextView" destination="NJk-T9-l51" id="IKc-oG-jz3"/>
                                             <outlet property="dateLabel" destination="7ho-53-k3q" id="VOd-zZ-J9v"/>
                                             <segue destination="VHD-gE-wwQ" kind="show" id="aJA-kF-ygo">
                                                 <segue key="commit" inheritsFrom="parent" id="0Hf-oA-lVf"/>
@@ -114,7 +114,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HRW-Dn-c07"/>
                     </view>
-                    <navigationItem key="navigationItem" id="V5y-r3-hCz"/>
+                    <navigationItem key="navigationItem" title="TimeLine" id="V5y-r3-hCz"/>
                     <connections>
                         <outlet property="tableView" destination="oMR-SP-zF6" id="lSx-18-c8d"/>
                     </connections>

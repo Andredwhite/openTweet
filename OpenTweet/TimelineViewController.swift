@@ -31,6 +31,7 @@ class TimelineViewController: UIViewController {
         guard let dest = segue.destination as? TimelineViewController else {return}
         guard let replies = repliesFromSender(sender: sender) else {return}
         dest.source = TimelineDataSource.init(tweets: replies.1, parent: replies.0)
+        dest.title = replies.0.id
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard source.timeLine.tweets.count > 1 else {return false}
