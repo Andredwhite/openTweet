@@ -25,7 +25,7 @@ class OpenTweetTests: XCTestCase {
         let displayer = TestDisplay(empty: false)
         displayer.display(tweet: tweet)
         XCTAssertTrue(displayer.authorLabel.text == tweet.author)
-        XCTAssertTrue(displayer.contentTextView.text == tweet.content)
+        XCTAssertTrue(displayer.contentLabel.text == tweet.content)
         let date = ISO8601DateFormatter().date(from: tweet.date)!
         XCTAssertTrue(displayer.dateLabel.text == TestDisplay.DisplayDateFormatter.string(from: date))
     }
@@ -84,9 +84,37 @@ class OpenTweetTests: XCTestCase {
         let display = TestDisplay(empty: false)
         displayer.displayTweet(at: IndexPath.FirstInFirst, in: display)
         XCTAssertTrue(display.authorLabel.text == tweet.author)
-        XCTAssertTrue(display.contentTextView.text == tweet.content)
+        XCTAssertTrue(display.contentLabel.text == tweet.content)
         let date = ISO8601DateFormatter().date(from: tweet.date)!
         XCTAssertTrue(display.dateLabel.text == TestDisplay.DisplayDateFormatter.string(from: date))
+    }
+    func testOneMentions(){
+        let tweet = "This is a tweet with a mention @tester"
+        let ranges =  tweet.mentionRanges()
+    XCTAssertTrue(ranges.contains(NSRange.init(tweet.range(of: "@tester")!, in:tweet)))
+        
+        XCTAssertTrue(ranges.count == 1)
+    }
+    func testNoMentions(){
+        let tweet = "Test no mentions"
+        let ranges = tweet.mentionRanges()
+        XCTAssertTrue(ranges.count == 0)
+    }
+    
+    func testNoMentionsEmpty(){
+        let tweet = ""
+        let ranges = tweet.mentionRanges()
+        XCTAssertTrue(ranges.count == 0)
+    }
+    
+    func testManyMentions(){
+        let tweet = "@Test saw @Test3 at the @test7 with @Test9 and @"
+        let ranges = tweet.mentionRanges()
+        XCTAssertTrue(ranges.contains(NSRange.init(tweet.range(of: "@Test")!, in:tweet)))
+        XCTAssertTrue(ranges.contains(NSRange.init(tweet.range(of: "@Test3")!, in:tweet)))
+        XCTAssertTrue(ranges.contains(NSRange.init(tweet.range(of: "@test7")!, in:tweet)))
+        XCTAssertTrue(ranges.contains(NSRange.init(tweet.range(of: "@Test9")!, in:tweet)))
+        XCTAssertTrue(ranges.count==4)
     }
 }
 /**
@@ -99,20 +127,23 @@ extension IndexPath{
 }
 extension OpenTweetTests{
     struct TestDisplay:TweetDisplayable{
+        var contentLabel: UILabel!
         var authorLabel: UILabel!
-        var contentTextView: UITextView!
         var dateLabel: UILabel!
         var avatarImageView: UIImageView!
         init(empty:Bool){
             if !empty{
                 authorLabel = UILabel()
-                contentTextView = UITextView()
+                contentLabel = UILabel()
                 dateLabel = UILabel()
                 avatarImageView = UIImageView()
             }
         }
     }
     struct TimeLineDisplay:TimeLineDisplayable{
+        var parentTweet: Tweet? {
+            return nil
+        }
         var timeLine: TimeLine
     }
     func createTestTweet(id:String, author:String, replying to:String?)->Tweet{

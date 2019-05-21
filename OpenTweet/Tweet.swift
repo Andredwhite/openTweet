@@ -56,9 +56,32 @@ extension TweetDisplayable{
     func display(tweet:Tweet){
         authorLabel?.text = tweet.author
         contentLabel?.text = tweet.content
+        contentLabel?.attributedText = tweet.content.mentionColoredText
         contentLabel?.translatesAutoresizingMaskIntoConstraints = false
         if let date = ISO8601DateFormatter().date(from: tweet.date){
             dateLabel?.text = Self.DisplayDateFormatter.string(from: date)
         }
+    }
+}
+
+public extension String{
+    ///Returns an array of the NSRange matching a mention
+    func mentionRanges() ->[NSRange]{
+        do {
+            let regex = try NSRegularExpression.init(pattern: "@[a-z]+[0-9]*[_]*[a-z]*[0-9]*", options: .caseInsensitive)
+            let range = NSRange(location: 0, length: self.count)
+            let some = regex.matches(in: self, options: .init(), range: range)
+            return some.map({$0.range})
+        }catch{
+            return []
+        }
+    }
+    ///Returns an attributed string with each mention colored red.
+    var mentionColoredText:NSAttributedString{
+        let string = NSMutableAttributedString.init(string: self)
+        for range in self.mentionRanges(){
+            string.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        }
+        return string
     }
 }
