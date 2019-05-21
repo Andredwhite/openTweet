@@ -42,7 +42,7 @@ class TimelineViewController: UIViewController {
 
 class TweetCell:UITableViewCell,TweetDisplayable{
     @IBOutlet var authorLabel: UILabel!
-    @IBOutlet var contentLabel: UILabel!
+    @IBOutlet var contentTextView: UITextView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var avatarImageView: UIImageView!
 }

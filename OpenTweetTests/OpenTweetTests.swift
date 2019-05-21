@@ -25,7 +25,7 @@ class OpenTweetTests: XCTestCase {
         let displayer = TestDisplay(empty: false)
         displayer.display(tweet: tweet)
         XCTAssertTrue(displayer.authorLabel.text == tweet.author)
-        XCTAssertTrue(displayer.contentLabel.text == tweet.content)
+        XCTAssertTrue(displayer.contentTextView.text == tweet.content)
         let date = ISO8601DateFormatter().date(from: tweet.date)!
         XCTAssertTrue(displayer.dateLabel.text == TestDisplay.DisplayDateFormatter.string(from: date))
     }
@@ -84,7 +84,7 @@ class OpenTweetTests: XCTestCase {
         let display = TestDisplay(empty: false)
         displayer.displayTweet(at: IndexPath.FirstInFirst, in: display)
         XCTAssertTrue(display.authorLabel.text == tweet.author)
-        XCTAssertTrue(display.contentLabel.text == tweet.content)
+        XCTAssertTrue(display.contentTextView.text == tweet.content)
         let date = ISO8601DateFormatter().date(from: tweet.date)!
         XCTAssertTrue(display.dateLabel.text == TestDisplay.DisplayDateFormatter.string(from: date))
     }
@@ -127,14 +127,14 @@ extension IndexPath{
 }
 extension OpenTweetTests{
     struct TestDisplay:TweetDisplayable{
-        var contentLabel: UILabel!
+        var contentTextView: UITextView!
         var authorLabel: UILabel!
         var dateLabel: UILabel!
         var avatarImageView: UIImageView!
         init(empty:Bool){
             if !empty{
                 authorLabel = UILabel()
-                contentLabel = UILabel()
+                contentTextView = UITextView()
                 dateLabel = UILabel()
                 avatarImageView = UIImageView()
             }

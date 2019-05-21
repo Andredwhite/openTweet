@@ -39,7 +39,7 @@ struct Tweet:Decodable, Equatable{
  */
 protocol TweetDisplayable{
     var authorLabel:UILabel!{get}
-    var contentLabel:UILabel!{get}
+    var contentTextView:UITextView!{get}
     var dateLabel:UILabel!{get}
     var avatarImageView:UIImageView!{get}
 }
@@ -55,9 +55,9 @@ extension TweetDisplayable{
      */
     func display(tweet:Tweet){
         authorLabel?.text = tweet.author
-        contentLabel?.text = tweet.content
-        contentLabel?.attributedText = tweet.content.mentionColoredText
-        contentLabel?.translatesAutoresizingMaskIntoConstraints = false
+        contentTextView?.text = tweet.content
+        contentTextView?.attributedText = tweet.content.mentionColoredText
+        contentTextView?.translatesAutoresizingMaskIntoConstraints = false
         if let date = ISO8601DateFormatter().date(from: tweet.date){
             dateLabel?.text = Self.DisplayDateFormatter.string(from: date)
         }
@@ -82,6 +82,8 @@ public extension String{
         for range in self.mentionRanges(){
             string.addAttribute(.foregroundColor, value: UIColor.red, range: range)
         }
+        let font = UIFont.systemFont(ofSize: 17)
+        string.addAttribute(.font, value: font, range: NSRange.init(location: 0, length: self.count))
         return string
     }
 }

@@ -63,12 +63,14 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-wh-q9e">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJk-T9-l51">
                                                     <rect key="frame" x="10" y="80" width="323" height="89"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ho-53-k3q">
                                                     <rect key="frame" x="10" y="179" width="323" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -77,22 +79,22 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MAA-wh-q9e" firstAttribute="top" secondItem="rX7-BL-W7l" secondAttribute="bottom" constant="10" id="1lL-xw-djO"/>
                                                 <constraint firstAttribute="bottom" secondItem="7ho-53-k3q" secondAttribute="bottom" constant="10" id="48x-Xg-tn1"/>
-                                                <constraint firstItem="MAA-wh-q9e" firstAttribute="trailing" secondItem="rX7-BL-W7l" secondAttribute="trailing" id="81M-F5-Uaq"/>
-                                                <constraint firstItem="MAA-wh-q9e" firstAttribute="leading" secondItem="rX7-BL-W7l" secondAttribute="leading" id="AXx-M5-X2q"/>
-                                                <constraint firstItem="7ho-53-k3q" firstAttribute="top" secondItem="MAA-wh-q9e" secondAttribute="bottom" constant="10" id="B2c-O4-s5c"/>
+                                                <constraint firstItem="NJk-T9-l51" firstAttribute="trailing" secondItem="rX7-BL-W7l" secondAttribute="trailing" id="5wj-VL-WR4"/>
+                                                <constraint firstItem="NJk-T9-l51" firstAttribute="leading" secondItem="rX7-BL-W7l" secondAttribute="leading" id="8of-ie-N4A"/>
                                                 <constraint firstItem="rX7-BL-W7l" firstAttribute="leading" secondItem="c9F-LO-qjC" secondAttribute="leading" constant="10" id="ES3-Wy-eeO"/>
-                                                <constraint firstItem="7ho-53-k3q" firstAttribute="trailing" secondItem="MAA-wh-q9e" secondAttribute="trailing" id="Poy-Qq-Zyw"/>
-                                                <constraint firstItem="7ho-53-k3q" firstAttribute="leading" secondItem="MAA-wh-q9e" secondAttribute="leading" id="ZNY-td-HUw"/>
                                                 <constraint firstItem="rX7-BL-W7l" firstAttribute="top" secondItem="c9F-LO-qjC" secondAttribute="top" constant="10" id="f7a-Ty-XrL"/>
+                                                <constraint firstItem="NJk-T9-l51" firstAttribute="top" secondItem="rX7-BL-W7l" secondAttribute="bottom" constant="10" id="gmU-lA-72N"/>
                                                 <constraint firstAttribute="trailing" secondItem="rX7-BL-W7l" secondAttribute="trailing" constant="10" id="qMr-qq-Wcv"/>
+                                                <constraint firstItem="7ho-53-k3q" firstAttribute="leading" secondItem="NJk-T9-l51" secondAttribute="leading" id="sS2-jd-vaj"/>
+                                                <constraint firstItem="7ho-53-k3q" firstAttribute="top" secondItem="NJk-T9-l51" secondAttribute="bottom" constant="10" id="uku-ZD-dJx"/>
+                                                <constraint firstItem="7ho-53-k3q" firstAttribute="trailing" secondItem="NJk-T9-l51" secondAttribute="trailing" id="xDN-ze-3s3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="0hK-Vz-7hm" id="K0U-y4-led"/>
                                             <outlet property="avatarImageView" destination="aMf-zg-f5L" id="N6y-8a-0OO"/>
-                                            <outlet property="contentLabel" destination="MAA-wh-q9e" id="gFD-vX-8Od"/>
+                                            <outlet property="contentLabel" destination="NJk-T9-l51" id="BMd-ra-HKG"/>
                                             <outlet property="dateLabel" destination="7ho-53-k3q" id="VOd-zZ-J9v"/>
                                             <segue destination="VHD-gE-wwQ" kind="show" id="aJA-kF-ygo">
                                                 <segue key="commit" inheritsFrom="parent" id="0Hf-oA-lVf"/>
