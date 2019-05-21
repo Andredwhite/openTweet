@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 /**
  Main data model
  
@@ -60,6 +61,14 @@ extension TweetDisplayable{
         contentTextView?.translatesAutoresizingMaskIntoConstraints = false
         if let date = ISO8601DateFormatter().date(from: tweet.date){
             dateLabel?.text = Self.DisplayDateFormatter.string(from: date)
+        }
+        if let avatar = tweet.avatar, let url = URL.init(string: avatar){
+            avatarImageView.af_setImage(withURL: url, placeholderImage: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: UIImageView.ImageTransition.noTransition, runImageTransitionIfCached: false) { (response) in
+                (self as? UITableViewCell)?.setNeedsLayout()
+                self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.height/2
+            }
+        }else{
+            avatarImageView.image = nil
         }
     }
 }
