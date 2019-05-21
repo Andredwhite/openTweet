@@ -57,3 +57,10 @@ What the assignment will NOT be judged on
 * If you try to complete a bonus and can't finish it, that's fine. I'd recommend using git commits/tags to indicate where the bonuses start in the history, so we can easily reset the branch at that commit and validate the minimum requirement.
 
 Happy coding!
+
+Version Information
+-------------------
+There are 3 versions which have tags to represent them. 
+* v1.0 Showcases all requirements along with bonuses for mentions,urls, and selection
+* v2.0 Adds the bonus for avatar image download without the pods folder. Must use pod install to run
+* v3.0 Is v2.0 with the pods folder included. 
